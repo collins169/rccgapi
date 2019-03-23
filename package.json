@@ -1,0 +1,32 @@
+{
+  "name": "rccgapi",
+  "version": "2.0.0",
+  "description": "Restful Api fro rccg Protocol Portal",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collins169/rccgapi.git"
+  },
+  "keywords": [
+    "Rccg",
+    "Api"
+  ],
+  "author": "Collins Onyetube",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/collins169/rccgapi/issues"
+  },
+  "homepage": "https://github.com/collins169/rccgapi#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "forever": "^0.15.3",
+    "moment": "^2.24.0",
+    "mysql": "^2.16.0",
+    "properties-reader": "0.0.16",
+    "winston": "^3.2.1"
+  }
+}
