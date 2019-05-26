@@ -187,7 +187,7 @@ module.exports = {
                 }else {
                     callback(err);
                 }
-            })
+            });
         }
     }
 }

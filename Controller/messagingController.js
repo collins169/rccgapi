@@ -1,6 +1,7 @@
 const connect= require('../Configuration/DBConfiguration');
 const response = require('../models/commonResponse');
 const moment = require('moment');
+const request = require('request');
 
 module.exports = {
     getSentSMS: function(callback) {
@@ -16,6 +17,28 @@ module.exports = {
             if(!err) {
                 callback(result);
             }
-        })
+        });
+    },
+    sendSMS: function(phone, text, callback) {
+        var requestData = {
+                  'phone': phone,
+                  'message': text
+                };
+        request({
+            url: 'http://localhost/rccg/messaging/send_sms.php',
+            method: 'POST',
+            headers:{
+            "content-type": "application/json"
+            },
+            json: true,
+            body:requestData
+        }, function (error, response, body) {
+            if (!error && response.statusCode == 200) {
+            callback(body);
+            // console.log(JSON.parse(body));
+            }else{
+                callback(error);
+            }
+        });
     }
 }
